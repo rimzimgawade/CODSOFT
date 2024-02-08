@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Exo 2", sans-serif;
+
+}
+
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #EFEBE9;
+    padding: 10px;
+}
+.content, .content2{
+    width: 100%;
+    margin: 5px;
+}
+
+header{
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 0px 50px;
+    padding-bottom: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .navigation a{
+    color: #fff;
+    background-color:#6D4C41;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: 0.2s;
+    transition-property:background;
+}
+header .navigation a:not(:last-child){
+    margin-right: 30px;
+}
+header .navigation a:hover{
+    background: #3E2723;
+
+}
+/*navigation la bg transition dyaycha ahe as per bg color*/
+
+.container{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 40px;
+}
+.container2{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 0px;
+}
+
+.imgbg img, .imgbg2 img{
+    height: 300px;
+    /*;
+    border: 2px solid #000;*/
+    
+}
+.imgbg2 img{
+    padding-top: 20px ;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+}
+
+.container, .container2{
+    margin: 0px 30px;
+}
+
+.container2 p{
+    margin-top: 50px;
+}
+
+.content h1{
+    font-size: 60px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 60px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    color: #424242;
+}
+
+.content .info h1 span{
+    color: #663333 ;
+}
+
+.content p, .content2 p{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    line-height: 25px;
+    width: 100%;
+    padding: 10px 10px;
+    color: #424242;
+    border: 1px solid grey;
+}
+
+.content .fc-button, .content2 .fc-button2{
+    color: #fff;
+    background: #6D4C41 ;
+    text-decoration: none;
+    font-weight: 400;
+    padding: 10px 20px;
+    border-radius: 5px;
+    letter-spacing: 2px;
+
+}
+.content .fc-button:hover, .content2 .fc-button2:hover{
+    background: #3E2723;
+}
+
+.media-icons{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: auto;
+}
+
+.media-icons a{
+    position: relative;
+    color:#3E2723;
+    font-size: 25px;
+    transition: 0.3s;
+    transition-property:transform;
+}
+
+.media-icons a:not(:last-child){
+    margin-right: 60px;
+}
+
+.media-icons a:hover{
+    transform: scale(2);
+}
+
+label{
+    display: none;
+}
+
+#check{
+    z-index: 3;
+    display: none;
+}
+
+/*Responsive*/
+
+@media (max-width: 960px) {
+    header .navigation{
+        display: none;
+    }
+    label{
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+        transition-property:transform;
+        color: #3E2723;
+    }
+    label:hover{
+        color: #6D4C41;
+    }
+    label .close-btn{
+        display: none;
+    }
+    #check:checked ~ header .navigation{
+        z-index: 2;
+        position: fixed;
+        background:rgb(239, 235, 233, 0.9);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #check:checked ~ header .navigation a{
+        font-weight: 700;
+        margin-right: 0px;
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+    }
+
+    #check:checked ~ header label .menu-btn{
+        display: none;
+    }
+
+    #check:checked ~ header label .close-btn{
+        z-index: 2;
+        display: block;
+        position: fixed;
+    }
+    
+    label .menu-btn{
+        position: absolute;
+    }
+
+    /*header .logo{
+        position: absolute;
+        top:px;
+    }*/
+
+    .content .info h1{
+        font-size: 45px;
+        
+    }
+}
